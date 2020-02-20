@@ -1,0 +1,14 @@
+version: "3"
+services:
+  api:
+    env_file: ./.docker-env
+    build: .
+    tty: true
+    stdin_open: true
+    image: serverless-todo
+    working_dir: /serverless-todo
+    volumes:
+      - .:/serverless-todo
+    container_name: serverless-todo
+#初回作成コマンド
+#docker-compose run api serverless create --template aws-python3 --name serverless-todo --path serverless-todo
